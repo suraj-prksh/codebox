@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% block title %}{{user.username |title}} - Dashboard{% endblock %}
+{% block content %}
+<br>
+<br>
+<div class="text-center">
+<img class="bd-placeholder-img rounded-circle" width="100" height="100" src="{{ user.profile.image.url }}" alt="{{user.username}}"><title>{{user.username}}</title>
+</div>
+
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Welcome, {{user.username}}</h1>
+</div>
+
+<div class="mb-3 text-center">
+        <a class="btn btn-lg btn-primary px-4 py-3" href="/ide">Practice</a>
+</div>
+<br><hr>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Courses</h1>
+</div>
+<br>
+<div class="container text-center">
+<ul class="row row-cols-1 row-cols-sm-2 row-cols-md-4 list-unstyled list">
+
+    <li class="col mb-4 shadow mx-2">
+        <a class="d-block text-dark" href="/courses/c">
+          <div class="p-3 py-4 mb-2 bg-light text-center rounded">
+              <img src="https://img.icons8.com/color/64/000000/c-programming.png"/>
+          </div>
+          <div class="name text-muted text-decoration-none text-center pb-2">C lang</div>
+        </a>
+    </li>
+
+    <li class="col mb-4 shadow mx-2">
+        <a class="d-block text-dark" href="/courses/cpp">
+          <div class="p-3 py-4 mb-2 bg-light text-center rounded">
+              <img src="https://img.icons8.com/color/64/000000/c-plus-plus-logo.png"/>
+          </div>
+          <div class="name text-muted text-decoration-none text-center pb-2">C++</div>
+        </a>
+    </li>
+
+    <li class="col mb-4 shadow mx-2">
+        <a class="d-block text-dark" href="/courses/python">
+          <div class="p-3 py-4 mb-2 bg-light text-center rounded">
+              <img src="https://img.icons8.com/color/64/000000/python.png"/>
+          </div>
+          <div class="name text-muted text-decoration-none text-center pb-2">Python</div>
+        </a>
+    </li>
+
+    <li class="col mb-4 shadow mx-2">
+        <a class="d-block text-dark" href="/courses/java">
+          <div class="p-3 py-4 mb-2 bg-light text-center rounded">
+            <img src="https://img.icons8.com/color/64/000000/java-coffee-cup-logo.png"/>
+          </div>
+          <div class="name text-muted text-decoration-none text-center pb-2">Java</div>
+        </a>
+    </li>
+</ul>
+    <br>and many <a href="/courses">more</a>.
+</div>
+
+
+{% endblock %}

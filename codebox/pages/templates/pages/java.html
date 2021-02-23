@@ -1,0 +1,158 @@
+{% extends 'index.html' %}
+{% block coursesactive %}active{% endblock %}
+{% block title %}Java - Courses | CodeBox{% endblock %}
+{% block content %}
+
+
+
+
+   <style>
+html {font-size: 14px;}
+@media (min-width: 768px) {html {font-size: 16px;}}
+.container {padding: 60px 15px 0; max-width: 960px;} .pricing-header {max-width: 700px;} .card-deck .card {min-width: 220px;} .border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; } .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+    .menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+
+.menu {
+  float:left;
+  width:12%;
+  text-align:center;
+  margin-top:45px;
+}
+
+.main {
+  float:left;
+  width:65%;
+  padding:0 20px;
+  margin-top: 60px;
+}
+.right {
+  background-color:#e5e5e5;
+  float:left;
+  width:23%;
+  padding:15px;
+  margin-top:55px;
+  text-align:center;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #282C35;
+  color: white;
+  border: 2px solid black;
+
+margin-right:28%;
+
+
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: #282C35;
+  color: white;
+  border: 2px solid black;
+
+margin-left:30%;
+
+
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+
+    </style>
+
+
+
+    </head>
+
+    <body>
+
+    <div class="c">
+        <body style="background-color: white;">
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="{% url 'c' %}">C</a>
+    <a href="/courses/c++">C++</a>
+    <a href="{% url 'python' %}">Python</a>
+    <a href="{% url 'java' %}">Java</a>
+<a href="#">Ruby</a>
+<a href="#">C#</a>
+<a href="#">Objective C</a>
+<a href="#">PHP</a>
+<a href="#">.NET</a>
+<a href="#">Angular</a>
+<a href="#">Node JS</a>
+<a href="#">Javascript</a>
+<a href="#">HTML</a>
+<a href="#">CSS</a>
+<a href="#">Bootstrap</a>
+
+
+  </div>
+
+  <div class="main">
+    <h2>Java Tutorial</h2>
+    <p>Our core Java programming tutorial is designed for students and working professionals. Java is an object-oriented, class-based, concurrent, secured and general-purpose computer-programming language. It is a widely used robust technology.
+
+      <h2>What is Java</h2>
+      <p>Java is a programming language and a platform. Java is a high level, robust, object-oriented and secure programming language. Java was developed by Sun Microsystems (which is now the subsidiary of Oracle) in the year 1995. James Gosling is known as the father of Java. Before Java, its name was Oak. Since Oak was already a registered company, so James Gosling and his team changed the Oak name to Java.
+      <p>Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has a runtime environment (JRE) and API, it is called a platform.
+
+      <h2>Why Java Programming named "Java"?</h2>
+      <p>Why had they chosen java name for Java language? The team gathered to choose a new name. The suggested words were "dynamic", "revolutionary", "Silk", "jolt", "DNA", etc. They wanted something that reflected the essence of the technology: revolutionary, dynamic, lively, cool, unique, and easy to spell and fun to say.
+      <p> Java is an island of Indonesia where the first coffee was produced (called java coffee). It is a kind of espresso bean. Java name was chosen by James Gosling while having coffee near his office.
+      <p>Initially developed by James Gosling at Sun Microsystems (which is now a subsidiary of Oracle Corporation) and released in 1995.
+    <p>JDK 1.0 released in(January 23, 1996). After the first release of Java, there have been many additional features added to the language. Now Java is being used in Windows applications, Web applications, enterprise applications, mobile applications, cards, etc. Each new version adds the new features in Java.
+  </div>
+
+  <div class="right">
+    <h4>History of Java</h4>
+    <p>The history of Java is very interesting. Java was originally designed for interactive television, but it was too advanced technology for the digital cable television industry at the time. The history of Java starts with the Green Team. Java team members (also known as Green Team), initiated this project to develop a language for digital devices such as set-top boxes, televisions, etc. However, it was suited for internet programming. Later, Java technology was incorporated by Netscape.</p>
+   <p>The principles for creating Java programming were "Simple, Robust, Portable, Platform-independent, Secured, High Performance, Multithreaded, Architecture Neutral, Object-Oriented, Interpreted, and Dynamic". Java was developed by James Gosling, who is known as the father of Java, in 1995. James Gosling and his team members started the project in the early '90s.</p>
+
+  </div>
+</div>
+
+<button class="button button1">Previous</button>
+<button class="button button2">Next</button>
+
+
+
+    {% endblock %}

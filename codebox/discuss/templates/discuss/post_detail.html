@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block content %}
+<article class="media content-section">
+  <div class="medaia-body">
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}" alt="image not found">
+    <div class="article-metedata">
+      <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{object.author}}</a>
+      <small class="text-muted">{{ object.date_posted|date:"F d, Y"}}</small>
+    </div>
+    <h2 class="article-title">{{ object.title }}</h2>
+    <p class="article-content">{{ object.content|safe }}</p>
+  </div>
+</article>
+{% if object.author == user %}
+<div class="post-update-delete">
+  <a href="{% url 'post-update' object.id %}"><button class="btn btn-outline-primary">Edit Post</button></a>
+  <a href="{% url 'post-delete' object.id %}"><button class="btn btn-outline-primary">Delete Post</button></a>
+</div>
+{% endif %}
+<hr>
+<a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+<hr>
+{{ object.comment_set.count }} Comments
+<div class="comment">
+
+  {% for comment in object.comment_set.all %}
+  {% if user.is_authenticated %}
+      <a href="#">{{ comment.author }}</a> <small class="text-muted">{{ comment.create_date }} </small>
+      {% if comment.author == user %}
+      <a href="{% url 'comment_remove' comment.id %}"><small class="text-muted text-danger">Delete</small></a>
+      {% endif %}
+      {{ comment.text | safe }}
+      <hr>
+  {% endif %}
+  {% endfor %}
+
+</div>
+{% endblock %}

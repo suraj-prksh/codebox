@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}CodeBox - Home{% endblock %}
+{% block content %}
+    <div role="main" class="container pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"><br>
+        <p class="lead">{% if user.is_authenticated %}Hey {{ user.username }}, {% endif %}Welcome to CodeBox! </p>
+        <h3 class="display-4">Come fall in love with<br><strong class="typewrite" data-period="2800" data-type='[ "learning.", "coding." ]'>
+            <span class="wrap"></span>
+        </strong></h3>
+    </div>
+{% if user.is_authenticated %}
+    <div class="mb-3 text-center">
+        <a class="btn btn-lg btn-primary px-4 py-3" href="/ide">Practice</a>
+    </div>
+{% else %}
+    <div class="mb-3 text-center">
+        <a class="btn btn-lg btn-primary px-4 py-3" href="/accounts/register">Register & Code</a><br>or
+        <a href="/accounts/login">Login</a>
+    </div>
+{% endif %}
+
+
+{% endblock %}

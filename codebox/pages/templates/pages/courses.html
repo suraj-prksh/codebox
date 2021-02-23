@@ -1,0 +1,121 @@
+{% extends 'index.html' %}
+{% block title %}CodeBox - Courses{% endblock %}
+{% block content %}
+
+   <style>
+
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+
+.menu {
+  float:left;
+  width:12%;
+  text-align:center;
+  margin-top:45px;
+}
+
+.main {
+  float:left;
+  width:65%;
+  padding:0 20px;
+  margin-top: 60px;
+}
+.right {
+  background-color:#e5e5e5;
+  float:left;
+  width:23%;
+  padding:15px;
+  margin-top:55px;
+  text-align:center;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #282C35;
+  color: white;
+  border: 2px solid black;
+
+margin-right:28%;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: #282C35;
+  color: white;
+  border: 2px solid black;
+
+margin-left:30%;
+
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+
+    </style>
+
+
+
+    <div class="c">
+        <body style="background-color: white;">
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="{% url 'c' %}">C</a>
+    <a href="/courses/c++">C++</a>
+    <a href="{% url 'python' %}">Python</a>
+    <a href="{% url 'java' %}">Java</a>
+<a href="#">Ruby</a>
+<a href="#">C#</a>
+<a href="#">Objective C</a>
+<a href="#">PHP</a>
+<a href="#">.NET</a>
+<a href="#">Angular</a>
+<a href="#">Node JS</a>
+<a href="#">Javascript</a>
+<a href="#">HTML</a>
+<a href="#">CSS</a>
+<a href="#">Bootstrap</a>
+  </div>
+    <h2>Courses</h2>
+
+<button class="button button1">Previous</button>
+<button class="button button2">Next</button>
+
+<iframe width="720" height="360" src="https://www.youtube.com/embed/KJgsSFOSQv0?autoplay=1">
+</iframe>
+
+
+    {% endblock %}

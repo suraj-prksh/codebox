@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block title %}CodeBox - About{% endblock %}
+{% block content %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">About CodeBox</h1>
+</div>
+<p class="lead">CodeBox is a web app which will primarily focus on providing a platform where students and coding enthusiasts can learn the basics of programming through smart modules. It is an accessible-to-all service through which it intends to target the school going students and the undergraduates of technical background. It provides different options to the user based on individual progress based on their trackboard. It also focuses on making it easy for students of non-technical background to learn coding from scratch. CodeBox intends to give the user a descriptive analysis of their coding abilities, and help them grow down the lane by suggesting areas where the user needs to improve.</p>
+<br><hr>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Vision</h1>
+</div>
+<h5>Create More Employable Talent</h5>
+<p class="lead">CodeBox has a mission to create skilled Software Engineers for our country and the world. We are here to bridge the gap between the quality of skills demanded by industry and the quality of skills imparted by conventional institutes.
+<h5>Make People Fall in Love with Coding</h5>
+<p class="lead">Programming is a lot of fun because, unlike other subjects, you get to instantly apply the concepts you are learning. At Coding Blocks, we strive to increase student interest by providing hands on practical training on every concept taught in the classroom.
+<h5>Unlock New Opportunities</h5>
+<p class="lead">We create confident developers who think beyond industrial jobs and march their ideas into self-created entrepreneurship ventures. Skill and innovative thinking give developers the confidence to transform their ideas into real life products and hopefully go on to build million dollar companies.
+<h5>Connect Talent with Employers</h5>
+<p class="lead">Along with training students with the latest technologies and programming languages, we also connect them to software companies via our placement assistance program. This program includes practicing a lot of interview problems and mock interviews conducted by company representatives.</p>
+<br><hr>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Contact</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Delhi, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 987654321</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> codebox.staff@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}

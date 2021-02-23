@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block title %}{{user.first_name|title}}-profile{% endblock %}
+{% block content %}
+
+  <div class="content-section">
+    <h1>{{user.username}} </h1>
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="Image Not Found">
+    </div>
+    <div class="media-body">
+      <h6>{{user.first_name}} {{user.last_name}} </h6>
+      <h6>{{ user.profile.bio }}</h6>
+      <h4>Contact Informations</h4>
+      <h6>{{user.email}}</h6>
+      <h6>{{ user.profile.phone }}</h6>
+    </div>
+    <div class="form-group">
+      <a href="{% url 'edit' %}" ><button class="btn btn-outline-info" type="submit">Edit Profile</button></a>
+    </div>
+  </div>
+{% endblock %}

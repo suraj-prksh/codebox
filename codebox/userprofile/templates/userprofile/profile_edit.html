@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block title %}{{user.first_name|title}}-profile{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <h1>{{user.username}} </h1>
+  <div class="content-section">
+
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="Image Not Found">
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">Info</legend>
+          {{ u_form|crispy }}
+          {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Update</button>
+        </div>
+
+    </form>
+    <div class="password-change">
+      <a href="{% url 'password_change' %}"><button class="btn btn-outline-info">Change Password</button></a>
+    </div>
+
+
+  </div>
+{% endblock %}
